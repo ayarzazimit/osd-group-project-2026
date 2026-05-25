@@ -2,41 +2,48 @@
 
 Group Open Source Software Development Project
 
- Project Title
-Simple Todo List Application
+Project Title
+Group Portfolio Website
 
-A simple and interactive Todo List web application built with HTML, CSS, and JavaScript.
+A collaborative website that showcases all 18 group members.
 
- Project Description
-This project demonstrates collaborative open source development using GitHub. Group members will contribute different features to the Todo List app.
-
-Features
-- Add new tasks
-- Mark tasks as completed
-- Delete tasks
-- Responsive design
-- Data persists in browser (localStorage)
+ Live Demo
+You can view the website here:  
+`https://ayarzamit.github.io/osd-group-project-2026/` (after GitHub Pages is enabled)
 
  How to Contribute
 
 1. Fork this repository
-2. Create a new branch (`git checkout -b feature-your-name`)
-3. Make your changes
-4. Commit your changes
-5. Push to your branch
-6. Open a Pull Request
-
- Contributors
-
-| Name              | GitHub Username       | Contribution                  |
-|-------------------|-----------------------|-------------------------------|
-| Abubakar Yahaya   | @ayarzamit            | Project Leader + Setup        |
-|                   |                       |                               |
-|                   |                       |                               |
-|                   |                       |                               |
+2. Create a new branch: `git checkout -b add-your-name`
+3. Add your profile card in `script.js`
+4. Commit and push your changes
+5. Open a Pull Request to the main repository
 
  Tech Stack
 - HTML5
 - CSS3
-- JavaScript (Vanilla)
+- JavaScript
+
+ Contributors
+
+| No. | Name                    | GitHub Username     | Contribution                  |
+|-----|-------------------------|---------------------|-------------------------------|
+| 1   | Abubakar Yahaya Zimit  | @ayarzamit          | Project Leader + Setup        |
+| 2   |                         |                     |                               |
+| 3   |                         |                     |                               |
+| 4   |                         |                     |                               |
+| 5   |                         |                     |                               |
+| 6   |                         |                     |                               |
+| 7   |                         |                     |                               |
+| 8   |                         |                     |                               |
+| 9   |                         |                     |                               |
+| 10  |                         |                     |                               |
+| 11  |                         |                     |                               |
+| 12  |                         |                     |                               |
+| 13  |                         |                     |                               |
+| 14  |                         |                     |                               |
+| 15  |                         |                     |                               |
+| 16  |                         |                     |                               |
+| 17  |                         |                     |                               |
+| 18  |                         |                     |                               |
 
