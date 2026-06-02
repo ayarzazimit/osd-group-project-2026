@@ -85,3 +85,30 @@ footer {
     margin-top: 60px;
     background: rgba(0,0,0,0.2);
 }
+/* ====================== */
+/* Social Links - Member 7 */
+/* ====================== */
+
+.social-links {
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.social-links h3 {
+    color: #333;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.social-icon {
+    font-size: 2.3rem;
+    margin: 0 15px;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007bff;
+    transform: translateY(-5px) scale(1.25);
+}
