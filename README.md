@@ -19,7 +19,7 @@ Just open `index.html` file in any web browser.
 
 | No. | Name                        | GitHub Username     | Contribution                  |
 |-----|-----------------------------|---------------------|-------------------------------|
-| 1   | Abubakar Yahaya Zimit      | @ayarzamit          | Project Leader + Setup        |
+| 1   | Abubakar Yahaya Zimit       | @ayarzamit          | Project Leader + Setup        |
 | 2   |                             |                     |                               |
 | 3   |                             |                     |                               |
 | 4   |                             |                     |                               |
@@ -29,7 +29,7 @@ Just open `index.html` file in any web browser.
 | 8   |                             |                     |                               |
 | 9   |                             |                     |                               |
 | 10  |                             |                     |                               |
-| 11  |                             |                     |                               |
+| 11  |  Muhammad Al-Ghazali Jalo   | @jalomoha           | Add Dark-mode                 |
 | 12  |                             |                     |                               |
 | 13  |                             |                     |                               |
 | 14  |                             |                     |                               |
