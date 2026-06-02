@@ -9,10 +9,10 @@ const members = [
     // Copy the format below and add your info before the last ];
 
     {
-        name: "Member Full Name 2",
-        username: "githubusername2",
-        role: "Group Member",
-        contribution: "Added my profile card"
+        name: "Muhammad Al-ghazali Jalo",
+        username: "jalomoha",
+        role: "Group Member 11",
+        contribution: "Added dark-mode"
     },
     {
         name: "Member Full Name 3",
@@ -22,6 +22,25 @@ const members = [
     }
     // Add more members here...
 ];
+
+const button = document.getElementById("theme-toggle");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+}
+
+button.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+});
+
+windows.matchMedia('(prefers-color-scheme: dark').matches
 
 function displayMembers() {
     const grid = document.getElementById('membersGrid');
