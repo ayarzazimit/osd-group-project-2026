@@ -1,26 +1,28 @@
 const members = [
-    {
-        name: "Abubakar Yahaya Zimit",
-        username: "ayarzamit",
-        role: "Group Leader",
-        contribution: "Project Setup & Coordination"
-    },
-    // ================= ADD YOUR DETAILS BELOW =================
-    // Copy the format below and add your info before the last ];
+  {
+    name: "Abubakar Yahaya Zimit",
+    username: "ayarzamit",
+    role: "Group Leader",
+    contribution: "Project Setup & Coordination"
+  },
 
-    {
-        name: "Muhammad Alghazali Jalo",
-        username: "jalomoha",
-        role: "Group Member 11",
-        contribution: "Added dark-mode-feature"
-    },
-    {
-        name: "Member Full Name 3",
-        username: "githubusername3",
-        role: "Group Member",
-        contribution: "Added my profile card"
-    }
-    // Add more members here...
+  // ================= ADD YOUR DETAILS BELOW =================
+
+  {
+    name: "Idris Maikano Idris",
+    username: "Maikano47",
+    role: "Group Member",
+    contribution: "Profile Card Added | Reg No: CIS/STE/22/1017"
+  },
+
+  {
+    name: "Member Full Name 3",
+    username: "githubusername3",
+    role: "Group Member",
+    contribution: "Added my profile card"
+  }
+
+  // Add more members here...
 ];
 
 const button = document.getElementById("theme-toggle");
@@ -43,22 +45,20 @@ button.addEventListener("click", () => {
 windows.matchMedia('(prefers-color-scheme: dark').matches
 
 function displayMembers() {
-    const grid = document.getElementById('membersGrid');
-    grid.innerHTML = '';
+  const grid = document.getElementById('membersGrid');
+  grid.innerHTML = '';
 
-    members.forEach(member => {
-        const card = document.createElement('div');
-        card.className = 'member-card';
-        card.innerHTML = `
-            <h3>${member.name}</h3>
-            <p><strong>${member.role}</strong></p>
-            <p>${member.contribution}</p>
-            <a href="https://github.com/${member.username}" target="_blank" class="github-link">
-                @${member.username}
-            </a>
-        `;
-        grid.appendChild(card);
-    });
+  members.forEach(member => {
+    const card = document.createElement('div');
+    card.className = 'member-card';
+
+    card.innerHTML = `
+      <h3>${member.name}</h3>
+      <p><strong>GitHub:</strong> ${member.username}</p>
+      <p><strong>Role:</strong> ${member.role}</p>
+      <p><strong>Contribution:</strong> ${member.contribution}</p>
+    `;
+
+    grid.appendChild(card);
+  });
 }
-
-window.onload = displayMembers;
