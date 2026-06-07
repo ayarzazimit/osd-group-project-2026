@@ -3,37 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSD Group 2026</title>
+    <title>OSD Group Project 2026</title>
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header>
-
-        <button id="theme-toggle">Toggle Theme</button>
-        
-        <h1>OSD Group Project 2026</h1>
-        <p>Open Source Software Development • Batch 2026</p>
+        <div class="header-container">
+            <button id="theme-toggle">🌙 Toggle Theme</button>
+            <h1>OSD Group Project 2026</h1>
+            <p>Open Source Software Development • Batch 2026</p>
+        </div>
     </header>
-<nav>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#membersGrid">Team Members</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</nav>
-<main>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#membersGrid">Team Members</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://github.com/ayarzamit/osd-group-project-2026" target="_blank">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
         <h2>Meet Our Team Members</h2>
         <div class="members-grid" id="membersGrid">
-            <!-- Member cards will appear here -->
+            <!-- Member cards will be added by JavaScript -->
         </div>
+
+        <!-- Skills Section (Member 14) -->
+        <section id="skills" class="skills-section">
+            <h2>Our Skills</h2>
+            <div class="skills-container">
+                <!-- Skills will be added here or by JS -->
+            </div>
+        </section>
+
+        <!-- Contact Section (Member 13) -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Have any questions? Feel free to reach out!</p>
+            <p><i class="fas fa-envelope"></i> osdgroup2026@gmail.com</p>
+        </section>
     </main>
-    
+
     <footer>
         <div class="footer-container">
-            
             <!-- Column 1: About -->
             <div class="footer-col">
                 <h3>OSD Group 2026</h3>
@@ -46,9 +63,10 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Meet The Team</a></li>
-                    <li><a href="#">Project Goals</a></li>
-                    <li><a href="#">GitHub Repository</a></li>
+                    <li><a href="#membersGrid">Meet The Team</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://github.com/ayarzamit/osd-group-project-2026" target="_blank">GitHub Repository</a></li>
                 </ul>
             </div>
 
@@ -61,23 +79,14 @@
                 </ul>
             </div>
 
-            <!-- Column 4: Social Links (Preserved Member 7's work) -->
+            <!-- Column 4: Social Links -->
             <div class="footer-col">
                 <h4>Connect With Us</h4>
-                <!-- Social Links - Added by Fatima (Member 7) -->
                 <div class="social-links">
-                    <a href="https://github.com/teeabba" target="_blank" class="social-icon">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" target="_blank" class="social-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" target="_blank" class="social-icon">
-                        <i class="fab fa-x-twitter"></i>
-                    </a>
-                    <a href="#" target="_blank" class="social-icon">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                    <a href="https://github.com/teeabba" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
