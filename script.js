@@ -6,7 +6,7 @@ const members = [
         username: "ayarzamit",
         role: "Group Leader",
         contribution: "Project Setup & Coordination",
-        image: "FB_IMG_16571174304510747.jpg"        // ← Your uploaded image
+        image: "FB_IMG_16571174304510747.jpg"   // Your uploaded image
     },
     {
         name: "Idris Maikano Idris",
@@ -22,16 +22,18 @@ const members = [
         contribution: "Added my profile card",
         image: "https://via.placeholder.com/150?text=M3"    // Change later
     }
-    // Add more members...
+    // Add more members here when they give you their images
 ];
 
-// === Keep the rest of the code the same (theme toggle + displayMembers function) ===
+// Theme Toggle (Unchanged)
 const button = document.getElementById("theme-toggle");
 
+// Load saved theme
 if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
 }
 
+// Theme Toggle Event
 button.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     if (document.body.classList.contains("dark-mode")) {
@@ -41,6 +43,7 @@ button.addEventListener("click", () => {
     }
 });
 
+// Display members with Profile Images - Member 8 Task
 function displayMembers() {
     const grid = document.getElementById('membersGrid');
     if (!grid) return;
@@ -63,8 +66,10 @@ function displayMembers() {
             <p><strong>Role:</strong> ${member.role}</p>
             <p><strong>Contribution:</strong> ${member.contribution}</p>
         `;
+        
         grid.appendChild(card);
     });
 }
 
+// Run when page loads
 document.addEventListener('DOMContentLoaded', displayMembers);
