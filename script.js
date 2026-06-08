@@ -2,6 +2,7 @@
 
 const members = [ /* ... your members array ... */ ];
 
+// Theme Toggle (Unchanged)
 const button = document.getElementById("theme-toggle");
 
 if (localStorage.getItem("theme") === "dark") {
@@ -33,11 +34,18 @@ function displayMembers() {
         card.style.animationDelay = `${0.1 + index * 0.15}s`;
         
         card.innerHTML = `
+            <div class="profile-image-container">
+                <img src="${member.image}" 
+                     alt="${member.name}" 
+                     class="profile-img"
+                     onerror="this.src='https://via.placeholder.com/150?text=No+Image';">
+            </div>
             <h3>${member.name}</h3>
             <p><strong>GitHub:</strong> <a href="https://github.com/${member.username}" target="_blank">@${member.username}</a></p>
             <p><strong>Role:</strong> ${member.role}</p>
             <p><strong>Contribution:</strong> ${member.contribution}</p>
         `;
+        
         grid.appendChild(card);
     });
 }
