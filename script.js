@@ -1,4 +1,5 @@
-// script.js
+// script.js - Member 15: Animations Enhancement
+
 const members = [
     {
         name: "Abubakar Yahaya Zimit",
@@ -42,11 +43,14 @@ button.addEventListener("click", () => {
 function displayMembers() {
     const grid = document.getElementById('membersGrid');
     if (!grid) return; // Safety check
-
+    
     grid.innerHTML = '';
-    members.forEach(member => {
+    
+    members.forEach((member, index) => {
         const card = document.createElement('div');
         card.className = 'member-card';
+        card.style.animationDelay = `${0.1 + index * 0.1}s`; // Dynamic stagger
+        
         card.innerHTML = `
             <h3>${member.name}</h3>
             <p><strong>GitHub:</strong> <a href="https://github.com/${member.username}" target="_blank">@${member.username}</a></p>
@@ -57,5 +61,36 @@ function displayMembers() {
     });
 }
 
+// ======================
+// Member 15: Scroll Triggered Animations
+// ======================
+function initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                // Stop observing after animation
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    // Observe all animatable elements
+    document.querySelectorAll('.member-card, .skills-section, #contact, h2').forEach(el => {
+        observer.observe(el);
+    });
+}
+
 // Run when page loads
-document.addEventListener('DOMContentLoaded', displayMembers);
+document.addEventListener('DOMContentLoaded', () => {
+    displayMembers();
+    initScrollAnimations();
+    
+    // Re-trigger animations when theme changes
+    button.addEventListener('click', () => {
+        setTimeout(initScrollAnimations, 300);
+    });
+});
