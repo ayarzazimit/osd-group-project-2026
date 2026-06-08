@@ -1,52 +1,37 @@
-// script.js
-const members = [
-    {
-        name: "Abubakar Yahaya Zimit",
-        username: "ayarzamit",
-        role: "Group Leader",
-        contribution: "Project Setup & Coordination"
-    },
-    {
-        name: "Idris Maikano Idris",
-        username: "Maikano47",
-        role: "Group Member",
-        contribution: "Profile Card Added | Reg No: CIS/STE/22/1017"
-    },
-    {
-        name: "Member Full Name 3",
-        username: "githubusername3",
-        role: "Group Member",
-        contribution: "Added my profile card"
-    }
-    // Add more members here...
-];
+// script.js - Member 15: Ultra Animations
+
+const members = [ /* ... your members array ... */ ];
 
 const button = document.getElementById("theme-toggle");
 
-// Load saved theme
 if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
 }
 
-// Theme Toggle
 button.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
+    localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+    setTimeout(initScrollAnimations, 450);
 });
 
-// Display members
+// Typing Effect
+function typeHeader() {
+    const h1 = document.querySelector('h1');
+    if (h1) h1.classList.add('typing');
+}
+
+// Display Members
 function displayMembers() {
     const grid = document.getElementById('membersGrid');
-    if (!grid) return; // Safety check
-
+    if (!grid) return;
+    
     grid.innerHTML = '';
-    members.forEach(member => {
+    
+    members.forEach((member, index) => {
         const card = document.createElement('div');
         card.className = 'member-card';
+        card.style.animationDelay = `${0.1 + index * 0.15}s`;
+        
         card.innerHTML = `
             <h3>${member.name}</h3>
             <p><strong>GitHub:</strong> <a href="https://github.com/${member.username}" target="_blank">@${member.username}</a></p>
@@ -57,5 +42,36 @@ function displayMembers() {
     });
 }
 
-// Run when page loads
-document.addEventListener('DOMContentLoaded', displayMembers);
+// Scroll + Progress Animations
+function initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.25 });
+
+    document.querySelectorAll('.member-card, .skills-section, #contact, h2').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// Simple Confetti on Load (optional wow effect)
+function launchConfetti() {
+    if (typeof confetti === 'undefined') return;
+    confetti({
+        particleCount: 80,
+        spread: 70,
+        origin: { y: 0.6 }
+    });
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    displayMembers();
+    typeHeader();
+    initScrollAnimations();
+    setTimeout(launchConfetti, 800);   // Remove this line if you don't want confetti
+});
