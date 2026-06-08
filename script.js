@@ -1,4 +1,4 @@
-// script.js - Member 15: Animations Enhancement
+// script.js - Member 15: Next Level Animations
 
 const members = [
     {
@@ -29,27 +29,35 @@ if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
 }
 
-// Theme Toggle
+// Theme Toggle with animation re-trigger
 button.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    
+    // Re-trigger animations after theme change
+    setTimeout(initScrollAnimations, 400);
 });
 
-// Display members
+// Typing Effect for Header
+function typeHeader() {
+    const h1 = document.querySelector('h1');
+    if (h1) {
+        h1.classList.add('typing');
+    }
+}
+
+// Display Members with dynamic delay
 function displayMembers() {
     const grid = document.getElementById('membersGrid');
-    if (!grid) return; // Safety check
+    if (!grid) return;
     
     grid.innerHTML = '';
     
     members.forEach((member, index) => {
         const card = document.createElement('div');
         card.className = 'member-card';
-        card.style.animationDelay = `${0.1 + index * 0.1}s`; // Dynamic stagger
+        card.style.animationDelay = `${0.15 + index * 0.12}s`;
         
         card.innerHTML = `
             <h3>${member.name}</h3>
@@ -61,36 +69,25 @@ function displayMembers() {
     });
 }
 
-// ======================
-// Member 15: Scroll Triggered Animations
-// ======================
+// Scroll Animations
 function initScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-in');
-                // Stop observing after animation
                 observer.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
-    });
+    }, { threshold: 0.2 });
 
-    // Observe all animatable elements
-    document.querySelectorAll('.member-card, .skills-section, #contact, h2').forEach(el => {
+    document.querySelectorAll('.member-card, .skills-section, #contact, h2, .skill-badge').forEach(el => {
         observer.observe(el);
     });
 }
 
-// Run when page loads
+// Initialize Everything
 document.addEventListener('DOMContentLoaded', () => {
     displayMembers();
+    typeHeader();
     initScrollAnimations();
-    
-    // Re-trigger animations when theme changes
-    button.addEventListener('click', () => {
-        setTimeout(initScrollAnimations, 300);
-    });
 });
